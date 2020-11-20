@@ -990,7 +990,8 @@
   const render = renderSpec(/* @__PURE__ */ h("div", {
     ref: (a) => setTimeout(() => console.log("div ref", a.outerHTML, a.offsetWidth), 0)
   }, /* @__PURE__ */ h(SuperLabel, {
-    name: $name
+    name: $name,
+    class: "golden"
   }), /* @__PURE__ */ h("br", null), /* @__PURE__ */ h("input", {
     ref: console.log.bind(console, "ref"),
     oninput: onInputValue((updatedValue) => $name.next(updatedValue)),
@@ -1002,8 +1003,13 @@
     };
   }
   document.body.append(render.dom);
-  function SuperLabel({name}) {
-    return /* @__PURE__ */ h("label", null, name, "\u{1F526}");
+  function SuperLabel({
+    name,
+    ...labelProps
+  }) {
+    return /* @__PURE__ */ h("label", {
+      ...labelProps
+    }, name, "\u{1F526}");
   }
 })();
 //# sourceMappingURL=main.js.map

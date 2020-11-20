@@ -9,6 +9,14 @@ import {
 
 declare global {
   namespace JSX {
+    /** Get the Props from the component function */
+    type Props<
+      T extends (
+        props: Record<string, any>,
+        ...children: JSX.Element[]
+      ) => JSX.Element
+    > = Parameters<T>[0];
+
     interface HtmlProps<T extends HTMLElement = HTMLElement> {
       accesskey?: StringValue;
       class?: StringValue;

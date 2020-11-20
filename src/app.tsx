@@ -1,4 +1,4 @@
-import { h, renderSpec } from "./jsxSpec";
+import { h, renderSpec, StringValue } from "./jsxSpec";
 import { BehaviorSubject } from "rxjs";
 
 const $name = new BehaviorSubject("world");
@@ -9,7 +9,7 @@ const render = renderSpec(
       setTimeout(() => console.log("div ref", a.outerHTML, a.offsetWidth), 0)
     }
   >
-    <SuperLabel name={$name}></SuperLabel>
+    <SuperLabel name={$name} class="golden"></SuperLabel>
     <br />
     <input
       ref={console.log.bind(console, "ref")}
@@ -28,6 +28,13 @@ function onInputValue(then: (value: string) => any) {
 
 document.body.append(render.dom);
 
-function SuperLabel({ name }) {
-  return <label>{name}🔦</label>;
+type SuperLabelProps = JSX.Props<typeof SuperLabel>;
+
+function SuperLabel({
+  name,
+  ...labelProps
+}: {
+  name: StringValue;
+} & JSX.HtmlLabelProps) {
+  return <label {...labelProps}>{name}🔦</label>;
 }
