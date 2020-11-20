@@ -1,0 +1,18 @@
+{
+  "name": "jsx-spec",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Cole Lawrence <cole@colelawrence.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/app.tsx --bundle --sourcemap --outfile=dist/main.js",
+    "watch": "watchexec --watch ./src --exts tsx,ts yarn build",
+    "check-tsc": "tsc --outDir=out"
+  },
+  "devDependencies": {
+    "esbuild": "^0.8.11",
+    "rxjs": "^6.6.3",
+    "typescript": "^4.1.2"
+  }
+}
