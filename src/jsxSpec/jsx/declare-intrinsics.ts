@@ -1,5 +1,5 @@
 // mark as a module for TypeScript
-export default {};
+import "./declare-props";
 
 declare global {
   namespace JSX {

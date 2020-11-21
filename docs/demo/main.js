@@ -981,7 +981,7 @@
         sub.add(subscription);
       dom.appendChild(inner);
     }
-    ref?.(dom);
+    ref?.(dom, sub);
     return {dom, subscription: sub};
   }
 

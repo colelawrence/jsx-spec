@@ -96,7 +96,10 @@ function renderSpecDoc(
   }
   const dom = doc.createElement(tagName) as HTMLElement;
   const attrs = structure[1];
-  let ref: (self: HTMLElement) => any | undefined = undefined;
+  let ref: (
+    self: HTMLElement,
+    sub: Subscription
+  ) => any | undefined = undefined;
   if (attrs != null) {
     for (let name in attrs) {
       const attrVal = attrs[name];
@@ -144,6 +147,6 @@ function renderSpecDoc(
     if (subscription) sub.add(subscription);
     dom.appendChild(inner);
   }
-  ref?.(dom);
+  ref?.(dom, sub);
   return { dom, subscription: sub };
 }

@@ -6,6 +6,7 @@ type EventOnListeners = NonNullableValues<
   Omit<GlobalEventHandlers, "addEventListener" | "removeEventListener">
 >;
 
+// Fixes "this" binding to the actual HTMLElement type which the event is emitted from
 type EventPropsWithThisElement<
   T
 > = {

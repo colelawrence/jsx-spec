@@ -1,4 +1,5 @@
-import { $StyleValue } from "./declare-values";
+import { Subscription } from "rxjs";
+import "./declare-values";
 
 declare global {
   namespace JSX {
@@ -13,8 +14,12 @@ declare global {
        * also an observable).
        */
       $style?: $StyleValue;
-      /** Access the current element after the element has been created with children (but before being mounted) */
-      ref?: (element: T) => void;
+      /**
+       * Access the current element after the element has been created with children (but before being mounted).
+       *
+       * This includes the element's subscription so you can add subscriptions to be unsubscribed when the element is dropped.
+       */
+      ref?: (element: T, subscription: Subscription) => void;
     }
   }
 }
