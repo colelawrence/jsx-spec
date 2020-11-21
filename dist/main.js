@@ -989,7 +989,7 @@
   const $name = new BehaviorSubject("world");
   const render = renderSpec(/* @__PURE__ */ h("div", {
     ref: (a) => setTimeout(() => console.log("div ref", a.outerHTML, a.offsetWidth), 0)
-  }, /* @__PURE__ */ h(SuperLabel, {
+  }, /* @__PURE__ */ h("h1", null, "JSX Spec demo"), /* @__PURE__ */ h(SuperLabel, {
     name: $name,
     class: "golden"
   }), /* @__PURE__ */ h("br", null), /* @__PURE__ */ h("input", {

@@ -1,11 +1,4 @@
-import {
-  AnyValue,
-  BooleanValue,
-  DateValue,
-  NumberValue,
-  StringValue,
-  Value,
-} from "./prop-values";
+import "./declare-values";
 
 declare global {
   namespace JSX {

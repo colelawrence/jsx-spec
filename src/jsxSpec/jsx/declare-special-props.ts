@@ -1,4 +1,4 @@
-import { $StyleValue } from "./prop-values";
+import { $StyleValue } from "./declare-values";
 
 declare global {
   namespace JSX {
