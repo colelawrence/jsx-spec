@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "esbuild src/app.tsx --bundle --sourcemap --outfile=dist/main.js",
+    "build": "esbuild src/app.tsx --bundle --sourcemap --outfile=docs/demo/main.js",
     "watch": "watchexec --watch ./src --exts tsx,ts yarn build",
     "check-tsc": "tsc --outDir=out"
   },
