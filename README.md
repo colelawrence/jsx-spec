@@ -48,3 +48,25 @@ function SuperLabel({
   return <label {...labelProps}>{name}🔦</label>;
 }
 ```
+
+Example tsconfig:
+```json
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": [
+      "ES2019.Array",
+      "ES6",
+      "DOM"
+    ],
+    "jsx": "react",
+    "jsxFactory": "h",
+    "moduleResolution": "node"
+  },
+  "include": [
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "src/*.tsx"
+  ]
+}
+```
