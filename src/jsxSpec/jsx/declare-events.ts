@@ -1,7 +1,7 @@
 // mark as a module for TypeScript
 export default {};
 
-type NonNullableValues<T> = { [P in keyof T]: NonNullable<T[P]> };
+type NonNullableValues<T> = { [P in keyof T]-?: NonNullable<T[P]> };
 type EventOnListeners = NonNullableValues<
   Omit<GlobalEventHandlers, "addEventListener" | "removeEventListener">
 >;
